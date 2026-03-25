@@ -34,6 +34,7 @@ class ListaDuplamente:
         if self.inicio is None:
             self.inicio = nodo
         else:
-            if nodo.dado <
+            self.fim.proximo = nodo
+            nodo.anterior = self.fim
         self.fim = nodo    
         self.imprimir()
