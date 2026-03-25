@@ -15,7 +15,7 @@ class Lista:
             while aux:
                 print( aux.dado )
                 aux = aux.prox
-
+c kwjdfbnaui fbeaswhvb\sjhvbsvsa
     def add(self, valor):
         nodo = No(valor)
         #Inicio vazio? adiciona o nodo aqui em cima
