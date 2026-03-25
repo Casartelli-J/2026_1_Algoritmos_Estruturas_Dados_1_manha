@@ -33,9 +33,8 @@ class ListaDuplamente:
         nodo = No(valor)
         if self.inicio is None:
             self.inicio = nodo
-            self.fim = nodo
         else:
             self.fim.proximo = nodo
             nodo.anterior = self.fim
-            self.fim = nodo
+        self.fim = nodo    
         self.imprimir()
