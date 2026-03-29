@@ -19,7 +19,7 @@ class ListaDuplamente:
 
     def imprimirReverso(self):
         print("----------------")
-        print("Lista Duplamente encadeada por ordem de chegada")
+        print("Lista Duplamente encadeada por ordem de chegada Reversa")
         if self.inicio is None:
           print("Lista vazia")
         else:
@@ -43,13 +43,15 @@ class ListaDuplamente:
                 while aux:
                     if nodo.dado < aux.dado:
                         nodo.proximo = aux
-                        aux.anterior = nodo.proximo
+                        aux.anterior = nodo
                         ant.proximo = nodo
-        
+                        nodo.anterior = ant
                         break
                     else:
                         ant = aux
+                        aux.anterior = ant
                         aux = aux.proximo
+                        
                 if aux == None:
                     ant.proximo = nodo
 
