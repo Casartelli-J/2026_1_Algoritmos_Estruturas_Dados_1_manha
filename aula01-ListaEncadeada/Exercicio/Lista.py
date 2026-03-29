@@ -1,42 +1,59 @@
 from No import No
+# Lista duplamente encadeada por ordem de chegada
 
-class Lista:
-    
+class ListaDuplamente:
     def __init__(self):
         self.inicio = None
+        self.fim = None
 
     def imprimir(self):
         print("----------------")
-        print("Lista encadeada por ordem crescente")
+        print("Lista Duplamente encadeada por ordem de chegada")
         if self.inicio is None:
             print("Lista vazia")
         else:
             aux = self.inicio
             while aux:
                 print( aux.dado )
-                aux = aux.prox
+                aux = aux.proximo
+
+    def imprimirReverso(self):
+        print("----------------")
+        print("Lista Duplamente encadeada por ordem de chegada")
+        if self.inicio is None:
+          print("Lista vazia")
+        else:
+            aux = self.fim
+            while aux:
+                print( aux.dado )
+                aux = aux.anterior
+
 
     def add(self, valor):
         nodo = No(valor)
-        #Inicio vazio? adiciona o nodo aqui em cima
-        if self.inicio == None:
+        if self.inicio is None:
             self.inicio = nodo
-            # até aqui n muda
         else:
             if nodo.dado < self.inicio.dado:
-                nodo.prox = self.inicio
+                nodo.proximo = self.inicio
                 self.inicio = nodo
             else:
                 ant = self.inicio
-                aux = self.inicio.prox
+                aux = self.inicio.proximo
                 while aux:
                     if nodo.dado < aux.dado:
-                        nodo.prox = aux
-                        ant.prox = nodo
+                        nodo.proximo = aux
+                        aux.anterior = nodo.proximo
+                        ant.proximo = nodo
+        
                         break
                     else:
                         ant = aux
-                        aux = aux.prox
+                        aux = aux.proximo
                 if aux == None:
-                    ant.prox = nodo
+                    ant.proximo = nodo
+
+
+
+        self.fim = nodo    
         self.imprimir()
