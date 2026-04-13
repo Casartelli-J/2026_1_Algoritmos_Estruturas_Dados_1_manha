@@ -6,7 +6,7 @@ class LIFO:
     def add(self, livro):
         livro.prox = self.topo
         self.topo = livro
-        self.imprimir()
+        
 
     def remove(self):
         if self.topo is not None:
@@ -22,7 +22,7 @@ class LIFO:
                 contador += 1
             aux = aux.prox
 
-        return contador
+        print(f"O autor {nome} tem um total de\n {contador} livros")
 
     def imprimir(self):
         print("----------------------")
