@@ -1,16 +1,16 @@
-class autor:
+class Autor:
     def __init__(self, nome, nascimento):
         self.nome = nome
         self.nascimento = nascimento
 
 
 
-
-class livro(autor):
+class Livro():
     def __init__(self, titulo, paginas, autor):
         self.titulo = titulo
         self.paginas = paginas
         self.autor = autor
+        self.prox = None
 
 
 
